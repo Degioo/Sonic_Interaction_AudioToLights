@@ -1,13 +1,13 @@
 \documentclass[12pt,a4paper]{article}
 \usepackage[utf8]{inputenc}
-\usepackage[italian]{babel}
+\usepackage[english]{babel}
 \usepackage{graphicx}
 \usepackage{hyperref}
 \usepackage{listings}
 \usepackage{geometry}
 \geometry{a4paper, margin=1in}
 
-\title{Relazione di Progetto: AudioToLights\\ \large Sonic Interaction Design}
+\title{Project Report: AudioToLights\\ \large Sonic Interaction Design}
 \author{}
 \date{\today}
 
@@ -15,26 +15,26 @@
 \maketitle
 
 \begin{abstract}
-Il progetto \textbf{AudioToLights} esplora le interazioni sonore e visive (Sonic Interaction Design) attraverso un sistema automatizzato in grado di sincronizzare in tempo reale l'esecuzione di una traccia audio (file MIDI) con uno show di luci. Sfruttando le capacità dell'Intelligenza Artificiale Generativa (Gemini 2.5 Flash), il sistema produce interpretazioni visive complesse dei parametri musicali, interfacciandosi con il software QLC+ tramite protocollo OSC.
+The \textbf{AudioToLights} project explores Sonic Interaction Design through an automated system capable of running a real-time synchronization between an audio track execution (MIDI file) and a light show. By leveraging Generative Artificial Intelligence (Gemini 2.5 Flash), the system produces complex visual interpretations of musical parameters, interfacing with the QLC+ software via the OSC protocol.
 \end{abstract}
 
-\section{Introduzione}
-Il controllo dinamico e sincronizzato dell'illuminazione in ambito performativo è un elemento chiave del Sonic Interaction Design. L'obiettivo del progetto è automatizzare il lavoro di un Light Jockey pre-analizzando gli eventi musicali per generare coreografie luminose. A tale scopo, è stato sviluppato un programma in Python che si compone di diversi moduli, dai parser MIDI alla comunicazione OSC.
+\section{Introduction}
+The dynamic and synchronized control of lighting in a performative environment is a key element of Sonic Interaction Design. The objective of the project is to automate the work of a Light Jockey by pre-analyzing musical events to generate lighting choreographies. To achieve this, a Python program has been developed, consisting of several modules ranging from MIDI parsers to OSC communication.
 
-\section{Architettura del Sistema}
-L'architettura software si divide in cinque moduli principali:
+\section{System Architecture}
+The software architecture is divided into five main modules:
 \begin{itemize}
-    \item \textbf{MIDI Parser (\texttt{MidiParser}):} Legge e analizza file MIDI (.mid) estraendo gli eventi di nota (Pitch, Velocity e Ritmo).
-    \item \textbf{AI Analyzer (\texttt{AIAnalyzer}):} Interroga il modello LLM (Gemini 2.5 Flash) fornendo gli eventi MIDI estratti per generare un mapping luci creativo nel formato JSON desiderato.
-    \item \textbf{Mapper:} Regola l'assegnamento concettuale delle istruzioni fornite dall'AI alle apparecchiature luci attive (es. PAR, Moving Head, Strobo).
-    \item \textbf{OSC Sender (\texttt{OSCSender}):} Gestisce la comunicazione tramite protocollo OSC (Open Sound Control) inviando i segnali a un'istanza locale di QLC+ attiva sulla porta 7700.
-    \item \textbf{Playback Engine (\texttt{PlaybackEngine}):} Si occupa della sincronizzazione temporale e dell'esecuzione parallela dell'audio (tramite \textit{pygame}) e dei comandi luce generati.
+    \item \textbf{MIDI Parser (\texttt{MidiParser}):} Reads and analyzes MIDI files (.mid) extracting note events (Pitch, Velocity, and Rhythm).
+    \item \textbf{AI Analyzer (\texttt{AIAnalyzer}):} Queries the LLM model (Gemini 2.5 Flash) providing the extracted MIDI events to generate a creative lighting mapping in the desired JSON format.
+    \item \textbf{Mapper:} Regulates the conceptual assignment of the instructions provided by the AI to the active lighting equipment (e.g., PAR, Moving Head, Strobe).
+    \item \textbf{OSC Sender (\texttt{OSCSender}):} Manages communication via the OSC (Open Sound Control) protocol, sending signals to a local instance of QLC+ running on port 7700.
+    \item \textbf{Playback Engine (\texttt{PlaybackEngine}):} Dedicated to the time synchronization and parallel playback execution of the audio (via \textit{pygame}) and of the generated lighting commands.
 \end{itemize}
 
-\section{Integrazione dell'Intelligenza Artificiale}
-L'approccio basato su intelligenza artificiale permette risultati estetici e compositivi superiori alle semplici regole fisse ("rule-based"). Viene passato un prompt strutturato contenente l'elenco cronologico degli eventi e le fixture disponibili nel rig. L'output generato da Gemini modula l'intensità in base alla \textit{velocity} della nota e assegna i tipi di fari a differenti variazioni ritmiche e di \textit{pitch}.
+\section{Artificial Intelligence Integration}
+The AI-based approach allows aesthetic and compositional results that are superior to simple fixed "rule-based" algorithms. A structured prompt containing the chronological list of events and the fixtures available in the rig is passed. The output generated by Gemini modulates the intensity based on the \textit{velocity} of the note and assigns light types to different rhythmic and \textit{pitch} variations.
 
-\section{Conclusione e Sviluppi Futuri}
-Il sistema \textit{AudioToLights} dimostra la fattibilità di un light-show autogenerato sincronizzato e fluido. Possibili sviluppi futuri includono il supporto per l'analisi audio in real-time (dati da microfono o tracce pre-registrate non-MIDI) e una gestione dei dispositivi tramite standard Art-Net per il controllo fisico esteso delle interruzioni.
+\section{Conclusion and Future Developments}
+The \textit{AudioToLights} system demonstrates the feasibility of a smoothed and synchronized auto-generated light-show. Possible future developments include support for real-time audio analysis (data directly from a microphone or pre-recorded non-MIDI tracks) and device management via the Art-Net standard for extended physical control of the hardware.
 
 \end{document}
