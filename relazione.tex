@@ -1,0 +1,40 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[italian]{babel}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage{geometry}
+\geometry{a4paper, margin=1in}
+
+\title{Relazione di Progetto: AudioToLights\\ \large Sonic Interaction Design}
+\author{}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Il progetto \textbf{AudioToLights} esplora le interazioni sonore e visive (Sonic Interaction Design) attraverso un sistema automatizzato in grado di sincronizzare in tempo reale l'esecuzione di una traccia audio (file MIDI) con uno show di luci. Sfruttando le capacità dell'Intelligenza Artificiale Generativa (Gemini 2.5 Flash), il sistema produce interpretazioni visive complesse dei parametri musicali, interfacciandosi con il software QLC+ tramite protocollo OSC.
+\end{abstract}
+
+\section{Introduzione}
+Il controllo dinamico e sincronizzato dell'illuminazione in ambito performativo è un elemento chiave del Sonic Interaction Design. L'obiettivo del progetto è automatizzare il lavoro di un Light Jockey pre-analizzando gli eventi musicali per generare coreografie luminose. A tale scopo, è stato sviluppato un programma in Python che si compone di diversi moduli, dai parser MIDI alla comunicazione OSC.
+
+\section{Architettura del Sistema}
+L'architettura software si divide in cinque moduli principali:
+\begin{itemize}
+    \item \textbf{MIDI Parser (\texttt{MidiParser}):} Legge e analizza file MIDI (.mid) estraendo gli eventi di nota (Pitch, Velocity e Ritmo).
+    \item \textbf{AI Analyzer (\texttt{AIAnalyzer}):} Interroga il modello LLM (Gemini 2.5 Flash) fornendo gli eventi MIDI estratti per generare un mapping luci creativo nel formato JSON desiderato.
+    \item \textbf{Mapper:} Regola l'assegnamento concettuale delle istruzioni fornite dall'AI alle apparecchiature luci attive (es. PAR, Moving Head, Strobo).
+    \item \textbf{OSC Sender (\texttt{OSCSender}):} Gestisce la comunicazione tramite protocollo OSC (Open Sound Control) inviando i segnali a un'istanza locale di QLC+ attiva sulla porta 7700.
+    \item \textbf{Playback Engine (\texttt{PlaybackEngine}):} Si occupa della sincronizzazione temporale e dell'esecuzione parallela dell'audio (tramite \textit{pygame}) e dei comandi luce generati.
+\end{itemize}
+
+\section{Integrazione dell'Intelligenza Artificiale}
+L'approccio basato su intelligenza artificiale permette risultati estetici e compositivi superiori alle semplici regole fisse ("rule-based"). Viene passato un prompt strutturato contenente l'elenco cronologico degli eventi e le fixture disponibili nel rig. L'output generato da Gemini modula l'intensità in base alla \textit{velocity} della nota e assegna i tipi di fari a differenti variazioni ritmiche e di \textit{pitch}.
+
+\section{Conclusione e Sviluppi Futuri}
+Il sistema \textit{AudioToLights} dimostra la fattibilità di un light-show autogenerato sincronizzato e fluido. Possibili sviluppi futuri includono il supporto per l'analisi audio in real-time (dati da microfono o tracce pre-registrate non-MIDI) e una gestione dei dispositivi tramite standard Art-Net per il controllo fisico esteso delle interruzioni.
+
+\end{document}
