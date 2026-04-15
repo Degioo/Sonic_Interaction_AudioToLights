@@ -1,8 +1,16 @@
+import random
+
 class Mapper:
-    def __init__(self, ai_script=None):
-        # Il copione generato dall'AI, se presente, conterrà le azioni pre-calcolate
+    def __init__(self, ai_script=None, fixtures=None):
         self.ai_script = ai_script
+        self.fixtures = fixtures if fixtures else []
         
+        self.pars = [f["id"] for f in self.fixtures if f["type"] == "rgb_par"]
+        self.mheads = [f["id"] for f in self.fixtures if f["type"] == "moving_head"]
+        self.strobes = [f["id"] for f in self.fixtures if f["type"] == "strobe"]
+        self.lasers = [f["id"] for f in self.fixtures if f["type"] == "laser"]
+        self.scanners = [f["id"] for f in self.fixtures if f["type"] == "scanner"]
+        self.bars = [f["id"] for f in self.fixtures if f["type"] == "led_bar"]
     def process_event(self, event):
         """
         Takes an event dict: {"t": float, "note": int, "velocity": int}
@@ -12,68 +20,54 @@ class Mapper:
         velocity = event["velocity"]
         t = event["t"]
         
-        # --- BLOCCO AI ---
-        # Se abbiamo il copione dell'AI, cerchiamo l'azione decisa per questo istante 't'
-        if self.ai_script:
-            for action in self.ai_script:
-                # Controlliamo la corrispondenza dell'evento al millesimo
-                if abs(action.get("t", -1) - t) < 0.001:
-                    return [action]
+        # --- AI BLOCK ---
+        # If we have an AI script, look for the action assigned to this timestamp 't'
+        ai_list = self.ai_script
+        if isinstance(ai_list, dict):
+            # If the LLM hallucinated a wrapped JSON object or a single event dictionary
+            ai_list = ai_list.get("events", [ai_list])
+            
+        if ai_list and isinstance(ai_list, list):
+            matched_actions = []
+            for action in ai_list:
+                # 50ms tolerance for LLM float rounding
+                if isinstance(action, dict) and abs(action.get("t", -1) - t) < 0.05:
+                    matched_actions.append(action)
+            
+            if matched_actions:
+                return matched_actions
 
-        # --- FALLBACK DI SICUREZZA (Rule-Based Classico se niente AI) ---
+        # --- SAFETY FALLBACK (Classic Rule-Based if AI is absent) ---
         # Scale velocity 0-127 to 0-255 for DMX intensity
         intensity = int((velocity / 127.0) * 255)
 
         
         actions = []
         
-        if note < 55:
-            # Low register -> PAR, warm color
-            # We will alternate between par_1 and par_2 for variety, or just hit both.
-            actions.append({
-                "target": "par",
-                "id": "par_1",  # Could be dynamic later
-                "intensity": intensity,
-                "color": (255, 100, 0) # Warm orange/red
-            })
-            actions.append({
-                "target": "par",
-                "id": "par_2",  
-                "intensity": intensity,
-                "color": (255, 50, 0) # Warm red
-            })
-            
-        elif 55 <= note < 76:
-            # Mid register -> Moving Head, cool/intermediate color, pan/tilt based on note
-            # Let's map note 55-75 to pan 0-255 loosely.
-            pan = int(((note - 55) / 20.0) * 255)
-            tilt = 127 # fixed tilt for now
-            
-            actions.append({
-                "target": "moving_head",
-                "id": "mh_1",
-                "intensity": intensity,
-                "color": (0, 150, 255), # Cool blue
-                "pan": pan,
-                "tilt": 127
-            })
-            actions.append({
-                "target": "moving_head",
-                "id": "mh_2",
-                "intensity": intensity,
-                "color": (50, 200, 255), # Cool cyan
-                "pan": 255 - pan, # Mirrored pan
-                "tilt": 127
-            })
+        if note < 50:
+            for pid in self.pars[:8]:
+                actions.append({"target": "rgb_par", "id": pid, "intensity": intensity, "color": (255, 50, 0)})
+            for bid in self.bars:
+                actions.append({"target": "led_bar", "id": bid, "intensity": intensity, "color": (255, 0, 0)})
+                
+        elif 50 <= note < 76:
+            pan = int(((note - 50) / 26.0) * 255)
+            for mhid in (random.sample(self.mheads, 4) if len(self.mheads)>=4 else self.mheads):
+                actions.append({
+                    "target": "moving_head", "id": mhid, 
+                    "intensity": intensity, "color": (0, 150, 255),
+                    "pan": pan, "tilt": 127 + random.randint(-40, 40)
+                })
+            for pid in (random.sample(self.pars, 6) if len(self.pars)>=6 else self.pars):
+                actions.append({"target": "rgb_par", "id": pid, "intensity": intensity, "color": (0, 255, 255)})
             
         else:
-            # High register -> Strobe
-            # High intensity, strobe rate from velocity
-            actions.append({
-                "target": "strobe",
-                "id": "strobe_1",
-                "intensity": 255, # Max intensity for strobe blast
-                "rate": intensity # Rate scales with velocity
-            })
+            for bid in self.bars:
+                actions.append({"target": "led_bar", "id": bid, "intensity": intensity, "color": (200, 255, 255)})
+            for mhid in self.mheads:
+                actions.append({
+                    "target": "moving_head", "id": mhid,
+                    "intensity": intensity, "pan": random.randint(0,255), "tilt": random.randint(0,255), "color": (255,255,255)
+                })
             
         return actions

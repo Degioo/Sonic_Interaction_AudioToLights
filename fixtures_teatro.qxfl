@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE FixtureList>
+<FixtureList xmlns="http://www.qlcplus.org/FixtureList">
+ <Creator>
+  <Name>Q Light Controller Plus</Name>
+  <Version>4.12.7</Version>
+  <Author>dorin</Author>
+ </Creator>
+ <Fixture>
+  <Manufacturer>Stairville</Manufacturer>
+  <Model>Retro Flat Par 18x10w rgbwa uv</Model>
+  <Mode>8 canali</Mode>
+  <ID>0</ID>
+  <Name>V 4</Name>
+  <Universe>0</Universe>
+  <Address>0</Address>
+  <Channels>8</Channels>
+ </Fixture>
+ <Fixture>
+  <Manufacturer>V-Show</Manufacturer>
+  <Model>Fresnel Spotlight FSP300</Model>
+  <Mode>3 channel</Mode>
+  <ID>1</ID>
+  <Name>Ban dx alto </Name>
+  <Universe>0</Universe>
+  <Address>175</Address>
+  <Channels>3</Channels>
+ </Fixture>
+ <Fixture>
+  <Manufacturer>V-Show</Manufacturer>
+  <Model>Fresnel Spotlight FSP300</Model>
+  <Mode>3 channel</Mode>
+  <ID>2</ID>
+  <Name>Ban dx basso</Name>
+  <Universe>0</Universe>
+  <Address>178</Address>
+  <Channels>3</Channels>
+ </Fixture>
+ <Fixture>
+  <Manufacturer>V-Show</Manufacturer>
+  <Model>Fresnel Spotlight FSP300</Model>
+  <Mode>3 channel</Mode>
+  <ID>3</ID>
+  <Name>Ban sx alto</Name>
+  <Universe>0</Universe>
+  <Address>181</Address>
+  <Channels>3</Channels>
+ </Fixture>
+ <Fixture>
+  <Manufacturer>V-Show</Manufacturer>
+  <Model>Fresnel Spotlight FSP300</Model>
+  <Mode>3 channel</Mode>
+  <ID>4</ID>
+  <Name>Ban sx basso</Name>
+  <Universe>0</Universe>
+  <Address>184</Address>
+  <Channels>3</Channels>
+ </Fixture>
+ <Fixture>
+  <Manufacturer>Stairville</Manufacturer>
+  <Model>Retro Flat Par 18x10w rgbwa uv</Model>
+  <Mode>8 canali</Mode>
+  <ID>5</ID>
+  <Name>V 5</Name>
+  <Universe>0</Universe>
+  <Address>14</Address>
+  <Channels>8</Channels>
+ </Fixture>
+ <Fixture>
+  <Manufacturer>Stairville</Manufacturer>
+  <Model>Retro Flat Par 18x10w rgbwa uv</Model>
+  <Mode>8 canali</Mode>
+  <ID>6</ID>
+  <Name>V 6</Name>
+  <Universe>0</Universe>
+  <Address>28</Address>
+  <Channels>8</Channels>
+ </Fixture>
+ <Fixture>
+  <Manufacturer>Stairville</Manufacturer>
+  <Model>Retro Flat Par 18x10w rgbwa uv</Model>
+  <Mode>8 canali</Mode>
+  <ID>7</ID>
+  <Name>V 1</Name>
+  <Universe>0</Universe>
+  <Address>227</Address>
+  <Channels>8</Channels>
+ </Fixture>
+ <Fixture>
+  <Manufacturer>Stairville</Manufacturer>
+  <Model>Retro Flat Par 18x10w rgbwa uv</Model>
+  <Mode>8 canali</Mode>
+  <ID>8</ID>
+  <Name>V 2</Name>
+  <Universe>0</Universe>
+  <Address>241</Address>
+  <Channels>8</Channels>
+ </Fixture>
+ <Fixture>
+  <Manufacturer>Stairville</Manufacturer>
+  <Model>Retro Flat Par 18x10w rgbwa uv</Model>
+  <Mode>8 canali</Mode>
+  <ID>9</ID>
+  <Name>V 3</Name>
+  <Universe>0</Universe>
+  <Address>219</Address>
+  <Channels>8</Channels>
+ </Fixture>
+ <Fixture>
+  <Manufacturer>Showtec</Manufacturer>
+  <Model>Club Par 12-6 RGBWAUV</Model>
+  <Mode>6 Channel</Mode>
+  <ID>10</ID>
+  <Name>N 1</Name>
+  <Universe>0</Universe>
+  <Address>235</Address>
+  <Channels>6</Channels>
+ </Fixture>
+ <Fixture>
+  <Manufacturer>Showtec</Manufacturer>
+  <Model>Club Par 12-6 RGBWAUV</Model>
+  <Mode>6 Channel</Mode>
+  <ID>11</ID>
+  <Name>N 2</Name>
+  <Universe>0</Universe>
+  <Address>249</Address>
+  <Channels>6</Channels>
+ </Fixture>
+ <Fixture>
+  <Manufacturer>Showtec</Manufacturer>
+  <Model>Club Par 12-6 RGBWAUV</Model>
+  <Mode>6 Channel</Mode>
+  <ID>12</ID>
+  <Name>N 3</Name>
+  <Universe>0</Universe>
+  <Address>8</Address>
+  <Channels>6</Channels>
+ </Fixture>
+ <Fixture>
+  <Manufacturer>Showtec</Manufacturer>
+  <Model>Club Par 12-6 RGBWAUV</Model>
+  <Mode>6 Channel</Mode>
+  <ID>13</ID>
+  <Name>N 4</Name>
+  <Universe>0</Universe>
+  <Address>22</Address>
+  <Channels>6</Channels>
+ </Fixture>
+ <Fixture>
+  <Manufacturer>Showtec</Manufacturer>
+  <Model>Club Par 12-6 RGBWAUV</Model>
+  <Mode>6 Channel</Mode>
+  <ID>14</ID>
+  <Name>N 5</Name>
+  <Universe>0</Universe>
+  <Address>64</Address>
+  <Channels>6</Channels>
+ </Fixture>
+ <Fixture>
+  <Manufacturer>Showtec</Manufacturer>
+  <Model>Club Par 12-6 RGBWAUV</Model>
+  <Mode>6 Channel</Mode>
+  <ID>15</ID>
+  <Name>N 6</Name>
+  <Universe>0</Universe>
+  <Address>70</Address>
+  <Channels>6</Channels>
+ </Fixture>
+ <Fixture>
+  <Manufacturer>Showtec</Manufacturer>
+  <Model>Club Par 12-6 RGBWAUV</Model>
+  <Mode>6 Channel</Mode>
+  <ID>16</ID>
+  <Name>N 7</Name>
+  <Universe>0</Universe>
+  <Address>76</Address>
+  <Channels>6</Channels>
+ </Fixture>
+ <Fixture>
+  <Manufacturer>Showtec</Manufacturer>
+  <Model>Club Par 12-6 RGBWAUV</Model>
+  <Mode>6 Channel</Mode>
+  <ID>17</ID>
+  <Name>N 8</Name>
+  <Universe>0</Universe>
+  <Address>82</Address>
+  <Channels>6</Channels>
+ </Fixture>
+ <Fixture>
+  <Manufacturer>Showtec</Manufacturer>
+  <Model>Club Par 12-6 RGBWAUV</Model>
+  <Mode>6 Channel</Mode>
+  <ID>18</ID>
+  <Name>N 9</Name>
+  <Universe>0</Universe>
+  <Address>144</Address>
+  <Channels>6</Channels>
+ </Fixture>
+ <Fixture>
+  <Manufacturer>Showtec</Manufacturer>
+  <Model>Club Par 12-6 RGBWAUV</Model>
+  <Mode>6 Channel</Mode>
+  <ID>19</ID>
+  <Name>N 10</Name>
+  <Universe>0</Universe>
+  <Address>256</Address>
+  <Channels>6</Channels>
+ </Fixture>
+ <Fixture>
+  <Manufacturer>Stairville</Manufacturer>
+  <Model>MH-110 Wash</Model>
+  <Mode>Standard</Mode>
+  <ID>20</ID>
+  <Name>T 1</Name>
+  <Universe>0</Universe>
+  <Address>36</Address>
+  <Channels>14</Channels>
+ </Fixture>
+ <Fixture>
+  <Manufacturer>Stairville</Manufacturer>
+  <Model>MH-110 Wash</Model>
+  <Mode>Standard</Mode>
+  <ID>21</ID>
+  <Name>T 2</Name>
+  <Universe>0</Universe>
+  <Address>50</Address>
+  <Channels>14</Channels>
+ </Fixture>
+ <Fixture>
+  <Manufacturer>Stairville</Manufacturer>
+  <Model>MH-110 Wash</Model>
+  <Mode>Standard</Mode>
+  <ID>22</ID>
+  <Name>T3</Name>
+  <Universe>0</Universe>
+  <Address>88</Address>
+  <Channels>14</Channels>
+ </Fixture>
+ <Fixture>
+  <Manufacturer>Stairville</Manufacturer>
+  <Model>MH-110 Wash</Model>
+  <Mode>Standard</Mode>
+  <ID>23</ID>
+  <Name>T 4</Name>
+  <Universe>0</Universe>
+  <Address>102</Address>
+  <Channels>14</Channels>
+ </Fixture>
+ <Fixture>
+  <Manufacturer>Stairville</Manufacturer>
+  <Model>MH-110 Wash</Model>
+  <Mode>Standard</Mode>
+  <ID>24</ID>
+  <Name>T5</Name>
+  <Universe>0</Universe>
+  <Address>116</Address>
+  <Channels>14</Channels>
+ </Fixture>
+ <Fixture>
+  <Manufacturer>Stairville</Manufacturer>
+  <Model>MH-110 Wash</Model>
+  <Mode>Standard</Mode>
+  <ID>25</ID>
+  <Name>T 6</Name>
+  <Universe>0</Universe>
+  <Address>130</Address>
+  <Channels>14</Channels>
+ </Fixture>
+ <Fixture>
+  <Manufacturer>Yuexin</Manufacturer>
+  <Model>230W 7R Beam Moving Head</Model>
+  <Mode>16 channel</Mode>
+  <ID>26</ID>
+  <Name>230W 7R Beam Moving Head</Name>
+  <Universe>0</Universe>
+  <Address>187</Address>
+  <Channels>16</Channels>
+ </Fixture>
+ <Fixture>
+  <Manufacturer>Yuexin</Manufacturer>
+  <Model>230W 7R Beam Moving Head</Model>
+  <Mode>16 channel</Mode>
+  <ID>27</ID>
+  <Name>230W 7R Beam Moving Head L</Name>
+  <Universe>0</Universe>
+  <Address>159</Address>
+  <Channels>16</Channels>
+ </Fixture>
+ <Fixture>
+  <Manufacturer>Yuexin</Manufacturer>
+  <Model>230W 7R Beam Moving Head</Model>
+  <Mode>16 channel</Mode>
+  <ID>28</ID>
+  <Name>230W 7R Beam Moving Head 2</Name>
+  <Universe>0</Universe>
+  <Address>203</Address>
+  <Channels>16</Channels>
+ </Fixture>
+ <Fixture>
+  <Manufacturer>Stairville</Manufacturer>
+  <Model>Show Bar Tri 18x3W RGB</Model>
+  <Mode>18-channel</Mode>
+  <ID>29</ID>
+  <Name>Bar 4</Name>
+  <Universe>0</Universe>
+  <Address>262</Address>
+  <Channels>18</Channels>
+ </Fixture>
+ <Fixture>
+  <Manufacturer>Stairville</Manufacturer>
+  <Model>Show Bar Tri 18x3W RGB</Model>
+  <Mode>18-channel</Mode>
+  <ID>30</ID>
+  <Name>Bar 3</Name>
+  <Universe>0</Universe>
+  <Address>280</Address>
+  <Channels>18</Channels>
+ </Fixture>
+ <Fixture>
+  <Manufacturer>Stairville</Manufacturer>
+  <Model>Show Bar Tri 18x3W RGB</Model>
+  <Mode>18-channel</Mode>
+  <ID>31</ID>
+  <Name>Bar 2</Name>
+  <Universe>0</Universe>
+  <Address>298</Address>
+  <Channels>18</Channels>
+ </Fixture>
+ <Fixture>
+  <Manufacturer>Stairville</Manufacturer>
+  <Model>Show Bar Tri 18x3W RGB</Model>
+  <Mode>18-channel</Mode>
+  <ID>32</ID>
+  <Name>Bar 1</Name>
+  <Universe>0</Universe>
+  <Address>316</Address>
+  <Channels>18</Channels>
+ </Fixture>
+ <Fixture>
+  <Manufacturer>Varytec</Manufacturer>
+  <Model>BAT.PAR 6 RGBWA</Model>
+  <Mode>9 Channel</Mode>
+  <ID>33</ID>
+  <Name>F 1</Name>
+  <Universe>0</Universe>
+  <Address>150</Address>
+  <Channels>9</Channels>
+ </Fixture>
+</FixtureList>
