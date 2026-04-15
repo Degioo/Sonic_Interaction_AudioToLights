@@ -2,6 +2,10 @@
 
 AudioToLights is an intelligent, hardware-agnostic system that bridges the gap between music production and automated theatrical lighting control. It utilizes local Generative AI (LLMs) to analyze rhythmic layouts off an audio+MIDI timeline and synthetically choreograph a dynamic DMX lighting show.
 
+
+
+
+
 ## Features
 - **AI-Driven Scenography**: Feeds structural MIDI events to a local LLM via Ollama (e.g., Llama 3.2). The LLM acts as an autonomous lighting designer, assigning precise DMX operations based on musical energy.
 - **Hardware Integration**: Dynamically parses real-world QLC+ stage files (`.qxfl`), adjusting itself automatically to your venue's equipment (Wash, Beams, Fresnels, LED Bars) without manual hardcoding.
